@@ -14,12 +14,16 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Vet Clinic\] ](#-vet-clinic-)
+- [📖 School Library ](#-school-library-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
-  - [👥 Author ](#-author-)
+  - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+  - [Usage](#usage)
+  - [Author ](#author-)
+  - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -28,20 +32,26 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Vet Clinic] <a name="about-project"></a>
+# 📖 School Library <a name="about-project"></a>
 
-**[ Vet Clinic ]** is a database for a veterinary clinic. It stores information about animals and their owners.
+**[ School Library ]** School library is an app that used to record what books are in the library and who borrows them.
 
-**[ ER Diagram ]**
-![Database Diagram](./ER-diagram.png)
+The app will allow you to:
+
+- [ ] Add new students or teachers.
+- [ ] Add new books.
+- [ ] Save records of who borrowed a given book and when.
+
+`And all of this is built in a beautiful and well-organized way!`
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-<summary>Database</summary>
+<summary>Ruby</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+   <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
   </ul>
 </details>
 
@@ -49,7 +59,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[key_feature_1]**
+- **Add new students or teachers**
+- **Add new books**
+- **Save records of who borrowed a given book and when**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -57,42 +69,53 @@
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
+To get a local copy up and running follow these simple example steps.
 
-This repository includes files with plain SQL that can be used to recreate a database:
+## Prerequisites
+Have `Ruby`, and `Git` installed on your local machine.
 
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. 
+### Setup
+
+Clone this repository to your desired folder:
+
+- git clone https://github.com/Miliyonayalew/school-libray.git
+- cd school-library
+- Run `bundle install` to install the required gems
+
+
+## Usage
+ruby ``
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## Author <a name="authors"></a>
 
-👤 ** Miliyon Ayalew**
+👤 **Miliyon Ayalew**
 
 - GitHub: [@Miliyonayalew](https://github.com/Miliyonayalew/)
 - Twitter: [@Miliyonayalew](https://twitter.com/MilaAyalew)
 - LinkedIn: [Miliyonayalew](https://www.linkedin.com/in/miliyon-ayalew-210808131/)
 
-👤 **Jonathan Kayizzi** 
-
-- GitHub: [@JonahKayizzi](https://github.com/JonahKayizzi) 
-- Twitter: [@JonahKayizzi](https://twitter.com/JonahKayizzi) 
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jonathan-kayizzi/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
+## 🔭 Future Features <a name="future-features"></a>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
+Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Miliyonayalew/school-library/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,7 +123,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-Give a ⭐️ if you like this project!
+If you like this project, please leave star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,8 +131,7 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- [Microverse](https://www.microverse.org/)
-- [The Odin Project](https://www.theodinproject.com/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,7 +139,6 @@ Give a ⭐️ if you like this project!
 
 ## ❓ FAQ <a name="faq"></a>
 
-- **Question:** Answer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,5 +148,5 @@ Give a ⭐️ if you like this project!
 
 This project is [MIT](./LICENSE) licensed.
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
