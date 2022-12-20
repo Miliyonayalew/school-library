@@ -84,7 +84,8 @@ Clone this repository to your desired folder:
 
 
 ## Usage
-ruby ``
+Run `main.rb` file in the terminal:
+ruby `main.rb`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
