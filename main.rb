@@ -1,27 +1,49 @@
-require_relative './student'
-require_relative './classroom'
-require_relative './book'
-require_relative './rental'
+require_relative './app'
 
-S1 = Student.new('Classroom 1', 17, 'James')
-S2 = Student.new('Classroom 2', 16, 'John')
+def menu
+  puts 'Please chose an option by entering a number: '
+  options = [
+    '1 - List all books',
+    '2 - List all people',
+    '3 - Create a person',
+    '4 - Create a book',
+    '5 - Create a rental',
+    '6 - List all rentals for a given person id',
+    '7 - Exit'
+  ]
+  puts options
+end
 
-C1 = Classroom.new('Classroom 1')
-p S1.classroom
-p C1.students.count
+def option_case(choice)
+  case choice
+  when 1
+    list_all_books
+  when 2
+    list_all_people
+  when 3
+    create_person
+  when 4
+    create_book
+  when 5
+    create_rental
+  when 6
+    list_rentals_by_id
+  else
+    puts 'Incorect choice, chose a number between 1-7'
+  end
+end
 
-S1.classroom = C1
-p C1.students.count
+def prompt_user
+  menu
+  choice = gets.chomp.to_i
+  choice == 7 ? quit_app : option_case(choice)
+  prompt_user
+end
 
-C1.add_students(S2)
-p C1.students.count
-p S2.classroom.label
+def main
+  puts "\n 👋 Welcome to School Library App! 📚 \n\n"
+  app = App.new
+  app.run
+end
 
-B1 = Book.new('The Power of Now', 'Eckhart Tolle')
-R1 = Rental.new('2020-01-01', S1, B1)
-
-p R1.book.title
-p R1.person.name
-
-p B1.rentals.count
-p S1.rentals.count
+main
