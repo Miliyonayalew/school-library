@@ -17,9 +17,16 @@ class App
     prompt_user
   end
 
-  def quit_app
-    puts 'Thank you for using this App! 🙏'
-    exit
+  # List all books
+  def list_all_books
+    if @books.empty?
+      puts 'The book list is empty, chose 4 to create book'
+    else
+      puts @books.count <= 1 ? "\n#{@books.count} Book\n" : "\n#{@books.count} Book's \n"
+      @books.each_with_index do |book, index|
+        puts "#{index + 1} Title: '#{book.title}', Author: #{book.author}"
+      end
+    end
   end
 
   # List Person: Student/Teacher
@@ -34,6 +41,7 @@ class App
     end
   end
 
+  # Create Person: Student/Teacher
   def create_person
     print 'Which do you want to create? A student (press 1) or a teacher (press 2)?: '
     choice = gets.chomp.to_i
@@ -97,17 +105,6 @@ class App
   end
 
   # Books
-  def list_all_books
-    if @books.empty?
-      puts 'The book list is empty, chose 4 to create book'
-    else
-      puts @books.count <= 1 ? "\n#{@books.count} Book\n" : "\n#{@books.count} Book's \n"
-      @books.each_with_index do |book, index|
-        puts "#{index + 1} Title: '#{book.title}', Author: #{book.author}"
-      end
-    end
-  end
-
   def create_book
     print 'Title: '
     title = gets.chomp
@@ -118,7 +115,7 @@ class App
     book = Book.new(title, author)
     @books << book unless @books.include?(book)
 
-    puts "\n Book is successfully created 👍"
+    puts "\n Book is successfully created 📚"
   end
 
   # Rentals
@@ -157,5 +154,10 @@ class App
     @rentals << rental unless @rentals.include?(rental)
 
     puts "\nRental created successfully 👍 \n\n"
+  end
+
+  def quit_app
+    puts 'Thank you for using this App! 🙏'
+    exit
   end
 end
