@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'pry'
 require_relative './app'
 
 def menu
@@ -37,7 +38,7 @@ end
 
 def prompt_user
   menu
-  choice = gets.chomp.to_i
+  choice = gets.chomp
   choice == 7 ? quit_app : option_case(choice)
   prompt_user
 end
