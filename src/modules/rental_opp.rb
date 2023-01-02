@@ -10,7 +10,7 @@ module RentalOpp
     prompt_user if @people.empty?
     person_index = gets.chomp.to_i - 1
 
-    print 'Date [yyyy/mm/dd]: '
+    print 'Date [yyyy-mm-dd]: '
     date = gets.chomp
 
     rental = Rental.new(date, @people[person_index], @books[book_index])

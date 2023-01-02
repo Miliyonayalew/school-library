@@ -1,4 +1,4 @@
-require_relative './app'
+require_relative '../app'
 
 def menu
   puts "\n 👋 Welcome to School Library App! 📚 \n\n"
