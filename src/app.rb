@@ -34,6 +34,7 @@ class App
   # Rentals Operations
   include RentalOpp
 
+  # Exit App
   def quit_app
     puts 'Thank you for using this App! 🙏'
     exit
