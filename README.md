@@ -100,6 +100,12 @@ ruby `main.rb`
 - Twitter: [@Miliyonayalew](https://twitter.com/MilaAyalew)
 - LinkedIn: [Miliyonayalew](https://www.linkedin.com/in/miliyon-ayalew-210808131/)
 
+👤 **Gustavo Porcilio**
+
+- GitHub: [@MarcoAurelioAntonio](https://github.com/MarcoAurelioAntonio)
+- Twitter: [@gustavoporcilio](https://twitter.com/gustavoporcilio)
+- LinkedIn: [Gustavo Porcilio](https://www.linkedin.com/in/gustavo-porcilio-4496a223a/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
