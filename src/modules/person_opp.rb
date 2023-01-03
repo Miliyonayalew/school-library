@@ -1,4 +1,23 @@
+require 'json'
+
 module PersonOpp
+  def persist_person_teacher(person_type, name, specialization, age, id)
+    new_person = { 'type' => person_type, 'name' => name, 'specialization' => specialization, 'age' => age, 'id' => id }
+    people_data = File.read('./src/modules/people.json')
+    people_list = JSON.parse(people_data)
+    people_list << new_person
+    File.write('./src/modules/people.json', JSON.pretty_generate(people_list))
+  end
+
+  def persist_person_student(person_type, name, age, parent_permission, id)
+    new_person = { 'type' => person_type, 'name' => name, 'age' => age, 'parent_permission' => parent_permission,
+                   'id' => id }
+    people_data = File.read('./src/modules/people.json')
+    people_list = JSON.parse(people_data)
+    people_list << new_person
+    File.write('./src/modules/people.json', JSON.pretty_generate(people_list))
+  end
+
   def create_person
     print 'Which do you want to create? A student (press 1) or a teacher (press 2)?: '
     choice = gets.chomp.to_i
@@ -27,6 +46,7 @@ module PersonOpp
 
     student = Student.new(classroom, age, name: name, parent_permission: has_permission)
     @people << student unless @people.include?(student)
+    persist_person_student(student.type, name, age, has_permission, student.id)
 
     puts "\n Student '#{name}' aged '#{age}' with the classroom '#{classroom}' created Successfully 👍"
   end
@@ -43,6 +63,7 @@ module PersonOpp
 
     teacher = Teacher.new(specialization, age, name: name)
     @people << teacher unless @people.include?(teacher)
+    persist_person_teacher(teacher.type, name, specialization, age, teacher.id)
 
     puts "\n Teacher '#{name}' aged '#{age}' with the specialization '#{specialization}' created Successfully 👍"
   end

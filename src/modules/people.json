@@ -1,0 +1,16 @@
+[
+  {
+    "type": "Student",
+    "name": "miliyon",
+    "age": 22,
+    "parent_permission": false,
+    "id": 30
+  },
+  {
+    "type": "Teacher",
+    "name": "gustavo",
+    "specialization": "maths",
+    "age": 26,
+    "id": 39
+  }
+]
