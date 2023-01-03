@@ -1,4 +1,14 @@
+require 'json'
+
 module RentalOpp
+  def persist_rental(date, person_index, book_index)
+    new_rental = { 'date' => date, 'person' => person_index, 'book' => book_index }
+    rental_data = File.read('./src/modules/rentals.json')
+    rental_list = JSON.parse(rental_data)
+    rental_list << new_rental
+    File.write('./src/modules/rentals.json', JSON.pretty_generate(rental_list))
+  end
+
   def create_rental
     print "Select a book from the following list by number:\n"
     list_all_books
@@ -15,6 +25,7 @@ module RentalOpp
 
     rental = Rental.new(date, @people[person_index], @books[book_index])
     @rentals << rental unless @rentals.include?(rental)
+    persist_rental(date, @people[person_index], @books[book_index])
 
     puts "\nRental created successfully 👍 \n\n"
   end
