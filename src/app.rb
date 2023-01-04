@@ -18,9 +18,7 @@ class App
 
     book_data = File.read('books.json')
     book_list = JSON.parse(book_data)
-    book_list.each do |book|
-      Book.new(book['title'], book['author'])
-    end
+    book_list.each { Book.new('title', 'author') }
   end
 
   def load_people
@@ -43,9 +41,7 @@ class App
 
     rental_data = File.read('rentals.json')
     rental_list = JSON.parse(rental_data)
-    rental_list.each do |rental|
-      Rental.new(rental['date'], rental['book'], rental['person'])
-    end
+    rental_list.each { Rental.new('date', 'book', 'person') }
   end
 
   def initialize

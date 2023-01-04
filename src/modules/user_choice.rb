@@ -1,8 +1,10 @@
 require_relative '../app'
 
 def menu
+  puts '============================================='
   puts "\n 👋 Welcome to School Library App! 📚 \n\n"
-  puts 'Please chose an option by entering a number: '
+  puts "============================================= \n\n"
+  puts "Please chose an option by entering a number: \n\n"
   options = {
     1 => 'List all books',
     2 => 'List all people',
@@ -30,7 +32,9 @@ def option_case(choice)
   when 6
     list_rentals_by_id
   else
-    puts 'Incorect choice, chose a number between 1-7'
+    puts '***************************************************'
+    puts '*** Incorect choice, chose a number between 1-7 ***'
+    puts '***************************************************'
   end
 end
 
