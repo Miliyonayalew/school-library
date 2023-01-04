@@ -1,0 +1,58 @@
+[
+  {
+    "type": "Student",
+    "name": "miliyon",
+    "age": 22,
+    "parent_permission": false,
+    "id": 30
+  },
+  {
+    "type": "Teacher",
+    "name": "gustavo",
+    "specialization": "maths",
+    "age": 26,
+    "id": 39
+  },
+  {
+    "type": "Student",
+    "name": "Jonathan",
+    "age": 30,
+    "parent_permission": false,
+    "id": 83
+  },
+  {
+    "type": "Teacher",
+    "name": "Peter",
+    "specialization": "Eng",
+    "age": 35,
+    "id": 65
+  },
+  {
+    "type": "Student",
+    "name": "Marcus",
+    "age": 22,
+    "parent_permission": false,
+    "id": 51
+  },
+  {
+    "type": "Student",
+    "name": "Ema",
+    "age": 26,
+    "parent_permission": false,
+    "id": 27
+  },
+  {
+    "type": "Student",
+    "name": "Cesar",
+    "age": 26,
+    "parent_permission": false,
+    "id": 14
+  },
+  {
+    "type": "Teacher",
+    "name": "Matias",
+    "specialization": "DS",
+    "age": 26,
+    "id": 80
+  }
+]

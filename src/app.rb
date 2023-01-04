@@ -8,14 +8,50 @@ require_relative './modules/list'
 require_relative './modules/person_opp'
 require_relative './modules/book_opp'
 require_relative './modules/rental_opp'
+require 'json'
 
 class App
   attr_reader :books, :people, :rentals
 
+  def load_books
+    return [] unless File.exist?('books.json')
+
+    book_data = File.read('books.json')
+    book_list = JSON.parse(book_data)
+    book_list.each do |book|
+      Book.new(book['title'], book['author'])
+    end
+  end
+
+  def load_people
+    return [] unless File.exist?('people.json')
+
+    people_data = File.read('people.json')
+    people_list = JSON.parse(people_data)
+    people_list.each do |person|
+      case person['type']
+      when 'Student'
+        Student.new(person['classroom'], person['age'])
+      when 'Teacher'
+        Teacher.new(person['specialization'], person['age'])
+      end
+    end
+  end
+
+  def load_rentals
+    return [] unless File.exist?('rentals.json')
+
+    rental_data = File.read('rentals.json')
+    rental_list = JSON.parse(rental_data)
+    rental_list.each do |rental|
+      Rental.new(rental['date'], rental['book'], rental['person'])
+    end
+  end
+
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = load_books
+    @people = load_people
+    @rentals = load_rentals
   end
 
   def run
