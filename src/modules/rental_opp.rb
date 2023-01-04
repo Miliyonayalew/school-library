@@ -3,11 +3,11 @@ require 'json'
 module RentalOpp
   def persist_rental(date, person_index, book_index)
     new_rental = { 'date' => date, 'author' => @books[book_index]['author'], 'title' => @books[book_index]['title'],
-                   'name' => @people[person_index]['name'] }
-    rental_data = File.read('./src/modules/rentals.json')
-    rental_list = JSON.parse(rental_data)
-    rental_list << new_rental
-    File.write('./src/modules/rentals.json', JSON.pretty_generate(rental_list))
+                   'name' => @people[person_index]['name'], 'id' => @people[person_index]['id'] }
+    rental_data = File.read('rentals.json')
+    @rentals = JSON.parse(rental_data)
+    @rentals << new_rental
+    File.write('rentals.json', JSON.pretty_generate(@rentals))
   end
 
   def create_rental
@@ -24,6 +24,8 @@ module RentalOpp
     print 'Date [yyyy-mm-dd]: '
     date = gets.chomp
 
+    rental = Rental.new(date, @people[person_index], @books[book_index])
+    @rentals << rental unless @rentals.include?(rental)
     persist_rental(date, person_index, book_index)
 
     puts "\nRental created successfully 👍 \n\n"

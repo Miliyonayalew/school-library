@@ -3,10 +3,10 @@ require 'json'
 module BookOpp
   def persist_book(title, author)
     new_book = { 'title' => title, 'author' => author }
-    book_data = File.read('./src/modules/books.json')
-    book_list = JSON.parse(book_data)
-    book_list << new_book
-    File.write('./src/modules/books.json', JSON.pretty_generate(book_list))
+    book_data = File.read('books.json')
+    @books = JSON.parse(book_data)
+    @books << new_book
+    File.write('books.json', JSON.pretty_generate(@books))
   end
 
   def create_book

@@ -2,35 +2,30 @@ require 'json'
 
 module List
   def list_all_books
-    return [] unless File.exist?('./src/modules/books.json')
-
-    book_data = File.read('./src/modules/books.json')
-    @books = JSON.parse(book_data)
-    @books.each_with_index do |book, index|
-      puts "#{index + 1} Title: '#{book['title']}', Author: #{book['author']}"
+    if @books.empty?
+      puts 'The book list is empty, chose 4 to create book'
+    else
+      puts @books.count <= 1 ? "\n#{@books.count} Book\n" : "\n#{@books.count} Book's \n"
+      @books.each_with_index do |book, index|
+        puts "#{index + 1} Title: '#{book['title']}', Author: #{book['author']}"
+      end
     end
   end
 
   def list_all_people
-    return [] unless File.exist?('./src/modules/people.json')
-
-    people_data = File.read('./src/modules/people.json')
-    @people = JSON.parse(people_data)
-    @people.each_with_index do |person, index|
-      puts "#{index + 1} Type: '#{person['type']}', Name: #{person['name']}, ID: #{person['id']}, Age: #{person['age']}"
+    if @people.empty?
+      puts 'The people list is empty, chose 3 to add people'
+    else
+      puts @people.count <= 1 ? "\n#{@people.count} Person\n" : "\n#{@people.count} Person's \n"
+      @people.each_with_index do |person, index|
+        puts "#{index + 1} [#{person['type']}] Name: #{person['name']}, ID: #{person['id']} Age: #{person['age']}"
+      end
     end
   end
 
   def list_rentals_by_id
-    return [] unless File.exist?('./src/modules/rentals.json')
-
-    rental_data = File.read('./src/modules/rentals.json')
-    @rentals = JSON.parse(rental_data)
     print "Enter a person's ID: "
     person_id = gets.chomp.to_i
-
-    people_data = File.read('./src/modules/people.json')
-    @people = JSON.parse(people_data)
     if !@people.find { |person| person['id'] == person_id }
       puts "No rental found with ID: #{person_id}"
     elsif @rentals.empty?
@@ -38,7 +33,7 @@ module List
     else
       puts "\nRentals #{@rentals.count}:\n"
       @rentals.each do |rental|
-        puts "Date: #{rental['date']}, Book: '#{rental['title']}' by #{rental['author']}, Rented to: #{rental['name']}"
+        puts "Date: #{rental['date']}, Book: '#{rental['title']}' by #{rental['author']}" if rental['id'] == person_id
       end
     end
   end

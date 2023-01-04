@@ -3,19 +3,19 @@ require 'json'
 module PersonOpp
   def persist_person_teacher(person_type, name, specialization, age, id)
     new_person = { 'type' => person_type, 'name' => name, 'specialization' => specialization, 'age' => age, 'id' => id }
-    people_data = File.read('./src/modules/people.json')
-    people_list = JSON.parse(people_data)
-    people_list << new_person
-    File.write('./src/modules/people.json', JSON.pretty_generate(people_list))
+    people_data = File.read('people.json')
+    @people = JSON.parse(people_data)
+    @people << new_person
+    File.write('people.json', JSON.pretty_generate(@people))
   end
 
   def persist_person_student(person_type, name, age, parent_permission, id)
     new_person = { 'type' => person_type, 'name' => name, 'age' => age, 'parent_permission' => parent_permission,
                    'id' => id }
-    people_data = File.read('./src/modules/people.json')
-    people_list = JSON.parse(people_data)
-    people_list << new_person
-    File.write('./src/modules/people.json', JSON.pretty_generate(people_list))
+    people_data = File.read('people.json')
+    @people = JSON.parse(people_data)
+    @people << new_person
+    File.write('people.json', JSON.pretty_generate(@people))
   end
 
   def create_person
