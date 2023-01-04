@@ -12,5 +12,12 @@
     "specialization": "maths",
     "age": 26,
     "id": 39
+  },
+  {
+    "type": "Student",
+    "name": "fd",
+    "age": 22,
+    "parent_permission": false,
+    "id": 15
   }
 ]
