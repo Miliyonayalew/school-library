@@ -54,5 +54,12 @@
     "specialization": "DS",
     "age": 26,
     "id": 80
+  },
+  {
+    "type": "Teacher",
+    "name": "gze",
+    "specialization": "DS",
+    "age": 24,
+    "id": 74
   }
 ]

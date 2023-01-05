@@ -1,21 +1,21 @@
 require_relative './spec_helper'
 
 describe Student do
-  let(:student) { Student.new('C1', 25, name: 'Miliyon') }
+  student = Student.new('C1', 25, name: 'Miliyon')
 
   it 'should be an instance of Student' do
     expect(student).to be_an_instance_of(Student)
   end
 
-  it 'should have a classroom' do
+  it 'should have a classroom label C1' do
     expect(student.classroom).to eq('C1')
   end
 
-  it 'should have a name' do
+  it 'should have a student name equal to Miliyon' do
     expect(student.name).to eq('Miliyon')
   end
 
-  it 'should have an age' do
+  it 'should have an age equal to 23' do
     expect(student.age).to eq(25)
   end
 

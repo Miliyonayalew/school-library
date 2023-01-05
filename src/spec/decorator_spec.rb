@@ -1,7 +1,7 @@
 require_relative './spec_helper'
 
 describe Decorator do
-  let(:decorator) { Decorator.new(Nameable.new) }
+  decorator = Decorator.new(Nameable.new)
 
   it 'should be a Nameable' do
     expect(decorator).to be_a(Nameable)

@@ -1,7 +1,7 @@
 require_relative './spec_helper'
 
 describe Nameable do
-  let(:nameable) { Nameable.new }
+  nameable = Nameable.new
 
   describe '#initialize' do
     it 'Should return the nameale object' do
